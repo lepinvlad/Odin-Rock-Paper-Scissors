@@ -1,0 +1,39 @@
+* {
+  font-family: Inter, sans-serif;
+  margin: 0;
+  background: #353535;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 100px;
+}
+
+.btn {
+  background: #2751a3;
+  color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid black;
+  width: 168px;
+  height: 90px;
+}
+
+.btn:hover {
+  filter: brightness(120%);
+}
+
+.btn.play {
+  font-size: 27px;
+}
+
+.text {
+  color: #bebfd1;
+}
+
+.text.home_text {
+  font-size: 37px;
+}
