@@ -1,0 +1,92 @@
+html, body{
+    height: 100%;
+    font-family: Inter, sans-serif;
+    overflow: hidden;
+    margin: 0;
+}
+
+body{
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_screen{
+    height: 512px;
+    width: 720px;
+    border-radius: 25px;
+    background: #353535;
+}
+
+
+.header_text {
+    font-size: 30px;
+    color: #BEBFD1;
+    padding: 20px;
+}
+
+.reset_text {
+    font-size: 20px;
+    color: #FFFF;
+    text-align: center;
+}
+
+.game_screen {
+    display: flex;
+    margin: 40px 0;
+    padding-left: 85px;
+    gap: 300px;
+}
+
+.score {
+    font-size: 14px;
+    color: #FFFF;
+}
+
+.who_win {
+    text-align: center;
+    color: #6881D8;
+    font-size: 40px;
+}
+
+.game_elements {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.element {
+    width: 100px;
+    height: 100px;
+}
+
+.p_vs {
+    padding-top: 27px;
+    color: #FFFF;
+    font-size: 20px;
+}
+
+.text_choose {
+    text-align: center;
+    font-size: 14px;
+    color: #827D7D;
+    margin: 30px 0 15px 0;
+}
+
+.game_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.game_buttons button {
+    background: #2751A3;
+    font-size: 25px;
+    color: #FFFF;
+    border-radius: 14px;
+    border: none;
+
+    width: 170px;
+    height: 60px;
+}
