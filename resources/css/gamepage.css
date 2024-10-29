@@ -15,7 +15,7 @@ body {
 
 .box_screen {
   height: 512px;
-  width: 720px;
+  width: 750px;
   border-radius: 25px;
   background: #353535;
 }
@@ -35,19 +35,18 @@ body {
 .game_screen {
   display: flex;
   margin: 40px 0;
-  padding-left: 70px;
-  gap: 300px;
+  padding-left: 23px;
+  gap: 100px;
 }
 
 .score {
-  font-size: 16px;
+  font-size: 18px;
   color: #ffff;
 }
 
 .who_win {
-  text-align: center;
   color: #6881d8;
-  font-size: 40px;
+  font-size: 24px;
 }
 
 .game_elements {
@@ -71,13 +70,14 @@ body {
   text-align: center;
   font-size: 14px;
   color: #827d7d;
-  margin: 30px 0 15px 0;
+  margin: 50px 0 15px 0;
 }
 
 .game_buttons {
   display: flex;
   justify-content: center;
   gap: 40px;
+  margin-top: 40px;
 }
 
 .game_buttons button {
