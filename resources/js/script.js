@@ -1,7 +1,8 @@
+// GENERAL
 const mainDiv = document.querySelector(".box_screen");
 let isFinished = false;
 
-// SCORE LOGIC
+// SCORE
 let userPoints = 0;
 let computerPoints = 0;
 
@@ -24,6 +25,26 @@ computerScore.textContent = `COMPUTER SCORE IS ${computerPoints}`;
 game_screen.append(playerScore, whoWin, computerScore);
 mainDiv.children[1].insertAdjacentElement("afterend", game_screen);
 
+// IMG
+
+const gameElements = document.createElement("div");
+gameElements.classList.add("game_elements");
+
+const userElement = document.createElement("img");
+userElement.classList.add("element");
+userElement.src = "resources/img/paper.png";
+
+const pVS = document.createElement("p");
+pVS.classList.add("p_vs");
+pVS.textContent = "VS";
+
+const computerElement = document.createElement("img");
+computerElement.classList.add("element");
+computerElement.src = "resources/img/paper.png";
+
+gameElements.append(userElement, pVS, computerElement);
+game_screen.insertAdjacentElement("afterend", gameElements);
+
 // BUTTONS LOGIC
 const buttonsName = ["Rock", "Paper", "Scissors"];
 
@@ -45,6 +66,25 @@ scissorsButton.textContent = buttonsName[2];
 gameButtons.append(rockButton, paperButton, scissorsButton);
 
 mainDiv.insertAdjacentElement("beforeend", gameButtons);
+
+function getImg(userChoice, computerChoice) {
+  if (userChoice == "Rock") {
+    userElement.src = "resources/img/rock.png";
+  } else if (userChoice == "Paper") {
+    userElement.src = "resources/img/paper.png";
+  } else if (userChoice == "Scissors") {
+    userElement.src = "resources/img/scissors.png";
+  }
+
+  if (computerChoice == "Rock") {
+    computerElement.src = "resources/img/rock.png";
+  } else if (computerChoice == "Paper") {
+    computerElement.src = "resources/img/paper.png";
+  } else if (computerChoice == "Scissors") {
+    computerElement.src = "resources/img/scissors.png";
+  }
+  return { userElement, computerElement };
+}
 
 // Get computer's choice
 function getComputerChoice() {
@@ -109,22 +149,23 @@ function updateResult() {
   computerScore.textContent = `COMPUTER SCORE IS ${computerPoints}`;
   whoWin.style.visibility = "visible";
 
-  if(userPoints == 5){
+  if (userPoints == 5) {
     setTimeout(() => {
       alert("Game Finished!\nYou won!");
       window.location.href = "/index.html";
     }, 100);
-  }else if(computerPoints == 5) {
+  } else if (computerPoints == 5) {
     setTimeout(() => {
       alert("Game Finished!\nYou lost!");
       window.location.href = "/index.html";
-    }, 100); 
+    }, 100);
   }
 }
 
 function startGame(e) {
   let user = e.target.textContent;
   let computer = getComputerChoice();
+  getImg(user, computer);
   gameLogic(user, computer);
 
   updateResult();
