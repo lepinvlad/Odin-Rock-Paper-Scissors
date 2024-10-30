@@ -152,12 +152,12 @@ function updateResult() {
   if (userPoints == 5) {
     setTimeout(() => {
       alert("Game Finished!\nYou won!");
-      window.location.href = "https://lepinvlad.github.io/Odin-Rock-Paper-Scissors/index.html";
+      window.location.href = "https://lepinvlad.github.io/Odin-Rock-Paper-Scissors";
     }, 100);
   } else if (computerPoints == 5) {
     setTimeout(() => {
       alert("Game Finished!\nYou lost!");
-      window.location.href = "https://lepinvlad.github.io/Odin-Rock-Paper-Scissors/index.html";
+      window.location.href = "https://lepinvlad.github.io/Odin-Rock-Paper-Scissors";
     }, 100);
   }
 }
