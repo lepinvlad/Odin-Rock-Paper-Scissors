@@ -1,4 +1,5 @@
 const mainDiv = document.querySelector(".box_screen");
+let isFinished = false;
 
 // SCORE LOGIC
 let userPoints = 0;
@@ -95,7 +96,7 @@ function gameLogic(userChoice, computerChoice) {
       whoWin.textContent = resultGame[0];
       userPoints++;
       return { computerPoints, userPoints };
-    }else{
+    } else {
       whoWin.textContent = resultGame[2];
       return { computerPoints, userPoints };
     }
@@ -107,12 +108,25 @@ function updateResult() {
   playerScore.textContent = `PLAYER SCORE IS ${userPoints}`;
   computerScore.textContent = `COMPUTER SCORE IS ${computerPoints}`;
   whoWin.style.visibility = "visible";
+
+  if(userPoints == 5){
+    setTimeout(() => {
+      alert("Game Finished!\nYou won!");
+      window.location.href = "/index.html";
+    }, 100);
+  }else if(computerPoints == 5) {
+    setTimeout(() => {
+      alert("Game Finished!\nYou lost!");
+      window.location.href = "/index.html";
+    }, 100); 
+  }
 }
 
 function startGame(e) {
   let user = e.target.textContent;
   let computer = getComputerChoice();
   gameLogic(user, computer);
+
   updateResult();
 }
 
