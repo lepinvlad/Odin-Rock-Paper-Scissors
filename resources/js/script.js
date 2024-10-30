@@ -62,48 +62,58 @@ function getComputerChoice() {
 function gameLogic(userChoice, computerChoice) {
   if (userChoice == "Rock") {
     if (computerChoice == "Paper") {
+      whoWin.textContent = resultGame[1];
       computerPoints++;
       return { computerPoints, userPoints };
     } else if (computerChoice == "Scissors") {
+      whoWin.textContent = resultGame[0];
       userPoints++;
       return { computerPoints, userPoints };
     } else {
+      whoWin.textContent = resultGame[2];
       return { computerPoints, userPoints };
     }
   } else if (userChoice == "Paper") {
     if (computerChoice == "Rock") {
+      whoWin.textContent = resultGame[0];
       userPoints++;
       return { computerPoints, userPoints };
     } else if (computerChoice == "Scissors") {
+      whoWin.textContent = resultGame[1];
       computerPoints++;
       return { computerPoints, userPoints };
     } else {
+      whoWin.textContent = resultGame[2];
       return { computerPoints, userPoints };
     }
   } else {
     if (computerChoice == "Rock") {
+      whoWin.textContent = resultGame[1];
       computerPoints++;
       return { computerPoints, userPoints };
     } else if (computerChoice == "Paper") {
+      whoWin.textContent = resultGame[0];
       userPoints++;
+      return { computerPoints, userPoints };
+    }else{
+      whoWin.textContent = resultGame[2];
       return { computerPoints, userPoints };
     }
   }
 }
 
 //update points
-function updatePoints() {
+function updateResult() {
   playerScore.textContent = `PLAYER SCORE IS ${userPoints}`;
   computerScore.textContent = `COMPUTER SCORE IS ${computerPoints}`;
+  whoWin.style.visibility = "visible";
 }
 
 function startGame(e) {
   let user = e.target.textContent;
   let computer = getComputerChoice();
   gameLogic(user, computer);
-  updatePoints();
-
-  alert(computer);
+  updateResult();
 }
 
 gameButtons.addEventListener("click", (e) => {
